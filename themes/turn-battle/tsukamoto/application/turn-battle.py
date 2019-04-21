@@ -7,9 +7,12 @@ from model.monster import Chimera, Goblin, Monster, Slime
 
 
 class AdventureResultType(Enum):
-    HERO_WIN = 1 # 勇者の勝ち
-    MONSTER_WIN = 2 # モンスターの勝ち
-    DRAW = 3 # 引き分け
+    # 勇者の勝ち
+    HERO_WIN = 1
+    # モンスターの勝ち
+    MONSTER_WIN = 2
+    # 引き分け
+    DRAW = 3
 
 
 class Adventure:
@@ -34,9 +37,15 @@ class Adventure:
         self.hero.print_ability()
 
     def __do_attack(self, attacker: Character, defender: Character) -> None:
+        # 攻撃する
         attacker.do_attack(defender.ability)
-        print(f"    {attacker.name}が{defender.name}に攻撃した！{attacker.damage} のダメージ！{attacker.get_critical_effect()}")
-        print(f"    {defender.name} の HP:{defender.ability.hp.before}/{defender.ability.hp.max} が {defender.ability.hp.current} になった！")
+
+        print(f"    {attacker.name}が{defender.name}に攻撃した！"
+              f"{attacker.damage} のダメージ！{attacker.get_critical_effect()}")
+
+        _hp = defender.ability.hp
+        print(f"    {defender.name} の "
+              f"HP:{_hp.before}/{_hp.max} が {_hp.current} になった！")
 
     def __get_adventure_result_type(self) -> AdventureResultType:
         if self.hero.is_dead() and self.current_monster.is_dead():

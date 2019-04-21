@@ -1,7 +1,8 @@
 from random import randint
 
 
-MAX_PERCENT = 100
+MAX_PERCENT: int = 100
+
 
 def hit_percentage(value: int) -> bool:
     assert(0 <= value <= MAX_PERCENT)

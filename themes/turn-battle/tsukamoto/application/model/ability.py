@@ -13,7 +13,8 @@ class Hp:
 
 
 class Ability:
-    def __init__(self, level: int, hp_max: int, hp: int, attack: int, defense: int) -> None:
+    def __init__(self, level: int, hp_max: int, hp: int,
+                 attack: int, defense: int) -> None:
         assert(level >= 0)
         assert(attack >= 0)
         assert(defense >= 0)
