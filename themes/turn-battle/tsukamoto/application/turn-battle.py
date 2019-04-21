@@ -1,6 +1,5 @@
 from enum import Enum
 from random import randint
-from typing import List
 
 from model.character import Character
 from model.hero import Hero
