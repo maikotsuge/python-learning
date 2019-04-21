@@ -70,20 +70,35 @@ class Adventure:
         print("----------------------------------------------")
 
     def go(self, monster_count: int) -> None:
+        # 冒険に出発する
+
         for _ in range(monster_count):
+            # モンスターが現れた！
             self.__encount()
-            _turn_count = 1
+
+            _turn_count = 0
             while self.hero.is_alive() and self.current_monster.is_alive():
+                _turn_count += 1
                 print("----------------------------------------------")
                 print(f"TURN {_turn_count}")
                 print("----------------------------------------------")
-                self.__do_attack(self.current_monster, self.hero)
-                print("")
+
+                # 勇者がモンスターを攻撃する
                 self.__do_attack(self.hero, self.current_monster)
-                _turn_count += 1
+
+                # モンスターが倒れたらターンを終了する
+                if self.current_monster.is_dead():
+                    break
+                print("")
+
+                # 勇者がモンスターから反撃される
+                self.__do_attack(self.current_monster, self.hero)
+
+            # 勇者が倒れたら冒険を終了する
             if self.hero.is_dead():
                 break
 
+        # 冒険から帰ってきた
         self.__result()
 
 
