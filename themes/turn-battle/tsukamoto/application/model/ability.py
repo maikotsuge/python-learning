@@ -9,8 +9,13 @@ class Ability:
         self.level = level
         self.hp_max = hp_max
         self.hp = hp
+        self.before_hp = self.hp
         self.attack = attack
         self.defense = defense
+
+    def damage(self, damage) -> None:
+        self.before_hp = self.hp
+        self.hp = max(self.hp - damage, 0)
 
     def print(self) -> None:
         print(f"  Lv: {self.level}")

@@ -9,7 +9,6 @@ class Attacker:
 
     def __init__(self, ability: Ability) -> None:
         self.ability = ability
-        self.before_hp = ability.hp
         self.damage = 0
         self._is_critical = False
 
@@ -38,5 +37,4 @@ class Attacker:
         self.damage = self.__calc_damage(enemy_ability)
 
         # HP更新
-        self.before_hp = enemy_ability.hp
-        enemy_ability.hp = max(enemy_ability.hp - self.damage, 0)
+        enemy_ability.damage(self.damage)
