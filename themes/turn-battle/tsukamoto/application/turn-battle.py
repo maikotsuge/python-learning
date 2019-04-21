@@ -57,12 +57,10 @@ class Adventure:
             print(f"{self.hero.name}の勝利")
             print("----------------------------------------------")
             print("今日も世界に平和が訪れた。")
-            return
         elif _adventure_result_type is AdventureResultType.MONSTER_WIN:
             print(f"{self.current_monster.name}の勝利")
             print("----------------------------------------------")
             print("おお 勇者！ しんでしまうとは なにごとだ！")
-            return
         else:
             print("相打ち...")
             print("----------------------------------------------")
