@@ -72,11 +72,15 @@ class Adventure:
     def go(self, monster_count: int) -> None:
         for _ in range(monster_count):
             self.__encount()
+            _turn_count = 1
             while self.hero.is_alive() and self.current_monster.is_alive():
+                print("----------------------------------------------")
+                print(f"TURN {_turn_count}")
                 print("----------------------------------------------")
                 self.__do_attack(self.current_monster, self.hero)
                 print("")
                 self.__do_attack(self.hero, self.current_monster)
+                _turn_count += 1
             if self.hero.is_dead():
                 break
 
