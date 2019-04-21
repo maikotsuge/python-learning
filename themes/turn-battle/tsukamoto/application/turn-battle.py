@@ -22,7 +22,7 @@ class Adventure:
         _monster_classes = [Slime, Goblin, Chimera]
         return _monster_classes[randint(0, len(_monster_classes) - 1)]()
 
-    def __encount(self) -> Monster:
+    def __encount(self) -> None:
         #   A A
         # (｢・ω・)｢ｶﾞｵｰ (・ω・`)ﾔﾒﾃｰ
         print("----------------------------------------------")
