@@ -18,7 +18,6 @@ class AdventureResultType(Enum):
 class Adventure:
     def __init__(self) -> None:
         self.hero = Hero("勇者")
-        self.current_monster = None
 
     def __get_encount_monster(self) -> Monster:
         # スライム、ゴブリン、キメラのどれかが出現する
