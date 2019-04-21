@@ -8,7 +8,7 @@ class Character(Attacker):
         self.name = name
 
     def is_alive(self) -> bool:
-        return self.ability.hp > 0
+        return self.ability.hp.current > 0
 
     def is_dead(self) -> bool:
         return not self.is_alive()

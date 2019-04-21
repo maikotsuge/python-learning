@@ -36,7 +36,7 @@ class Adventure:
     def __do_attack(self, attacker: Character, defender: Character) -> None:
         attacker.do_attack(defender.ability)
         print(f"  {attacker.name}が{defender.name}に攻撃した！{attacker.damage} のダメージ！{attacker.get_critical_effect()}")
-        print(f"  {defender.name} の HP:{defender.ability.before_hp}/{defender.ability.hp_max} が {defender.ability.hp} になった！")
+        print(f"  {defender.name} の HP:{defender.ability.hp.before}/{defender.ability.hp.max} が {defender.ability.hp.current} になった！")
 
     def __get_adventure_result_type(self) -> AdventureResultType:
         if self.hero.is_dead() and self.current_monster.is_dead():

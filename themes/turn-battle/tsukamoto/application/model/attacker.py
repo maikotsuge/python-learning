@@ -37,4 +37,4 @@ class Attacker:
         self.damage = self.__calc_damage(enemy_ability)
 
         # HP更新
-        enemy_ability.damage(self.damage)
+        enemy_ability.hp.damage(self.damage)
