@@ -30,9 +30,9 @@ class Adventure:
         self.current_monster = self.__get_encount_monster()
         print(f"あ！ {self.current_monster.name} が 飛び出してきた！")
         print("----------------------------------------------")
-        self.current_monster.ability.print(self.current_monster.name)
+        self.current_monster.print_ability()
         print("----------------------------------------------")
-        self.hero.ability.print(self.hero.name)
+        self.hero.print_ability()
 
     def __do_attack(self, attacker: Character, defender: Character) -> None:
         attacker.do_attack(defender.ability)

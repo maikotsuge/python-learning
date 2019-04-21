@@ -12,8 +12,7 @@ class Ability:
         self.attack = attack
         self.defense = defense
 
-    def print(self, name: str) -> None:
-        print(f"  {name}")
+    def print(self) -> None:
         print(f"  Lv: {self.level}")
         print(f"  HP: {self.hp}")
         print(f"  AT: {self.attack}")

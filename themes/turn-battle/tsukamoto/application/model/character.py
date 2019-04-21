@@ -12,3 +12,7 @@ class Character(Attacker):
 
     def is_dead(self) -> bool:
         return not self.is_alive()
+
+    def print_ability(self) -> None:
+        print(f"  {self.name}")
+        self.ability.print()
