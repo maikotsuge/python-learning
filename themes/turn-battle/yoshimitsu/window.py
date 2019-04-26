@@ -1,12 +1,32 @@
 from abc import ABCMeta, abstractmethod
 from charactor import Charactor
-from subwindow import SubWindow, WindowStyle, EncountMessage, EnemyStatus, PlayerStatus, SubWindowPos, Top, NoTop, Turn, DamageMessage, ResultMessage, Win, Lose, Draw, NormalEnd, BadEnd, TrueEnd
+from subwindow import (
+    SubWindow,
+    WindowStyle,
+    EncountMessage,
+    EnemyStatus,
+    PlayerStatus,
+    SubWindowPos,
+    Top,
+    NoTop,
+    Turn,
+    DamageMessage,
+    ResultMessage,
+    Win,
+    Lose,
+    Draw,
+    NormalEnd,
+    BadEnd,
+    TrueEnd,
+)
 from battlemanager import BattleManager
+
 
 class Phase(metaclass=ABCMeta):
     @abstractmethod
     def draw(self, subwindow: SubWindow, battlemanager: BattleManager):
         pass
+
 
 class Encount(Phase):
     def draw(self, subwindow: SubWindow, battlemanager: BattleManager):
@@ -14,10 +34,12 @@ class Encount(Phase):
         subwindow.draw(body=EnemyStatus(), pos=NoTop())
         subwindow.draw(body=PlayerStatus(), pos=NoTop())
 
+
 class Battle(Phase):
     def draw(self, subwindow: SubWindow, battlemanager: BattleManager):
         subwindow.draw(body=Turn(), pos=NoTop())
         subwindow.draw(body=DamageMessage(), pos=NoTop())
+
 
 class Result(Phase):
     def draw(self, subwindow: SubWindow, battlemanager: BattleManager):
@@ -33,9 +55,11 @@ class Result(Phase):
             subwindow.draw(body=Win(), pos=NoTop())
             subwindow.draw(body=TrueEnd(), pos=NoTop())
 
-class Window():
+
+class Window:
     def __init__(self, style: WindowStyle, battlemanager: BattleManager):
         self.subwindow = SubWindow(style=style, battlemanager=battlemanager)
-        self.battlemanager=battlemanager
+        self.battlemanager = battlemanager
+
     def draw(self, phase: Phase):
         phase.draw(subwindow=self.subwindow, battlemanager=self.battlemanager)

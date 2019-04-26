@@ -6,7 +6,9 @@ from charactor import CharactorLoader, Player, Enemy
 from battlemanager import BattleManager
 
 enemies = CharactorLoader("m_enemy_charactor.tsv")
-enemy = enemies.get_charactor_by_id(id=choice(enemies.get_charactor_ids()), lv=randint(0, 10), charactor_type=Enemy())
+enemy = enemies.get_charactor_by_id(
+    id=choice(enemies.get_charactor_ids()), lv=randint(0, 10), charactor_type=Enemy()
+)
 
 players = CharactorLoader("m_player_charactor.tsv")
 player = players.get_charactor_by_id(id=0, lv=10, charactor_type=Player())

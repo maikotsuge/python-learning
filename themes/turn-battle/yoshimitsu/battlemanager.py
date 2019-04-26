@@ -8,14 +8,15 @@ class Behave(metaclass=ABCMeta):
     def calcurate_damage(self, attacker: Charactor, defencer: Charactor):
         pass
 
+
 class Attack(Behave):
     def calcurate_damage(self, attacker: Charactor, defencer: Charactor):
         critical_rate = 0.25
-        weight = [1-critical_rate, critical_rate]
+        weight = [1 - critical_rate, critical_rate]
         return max([0, attacker.at * choice([1, 2], p=weight) - defencer.de])
 
 
-class BattleManager():
+class BattleManager:
     def __init__(self, enemy: Charactor, player: Charactor):
         self.turn = 0
         self.enemy = enemy
