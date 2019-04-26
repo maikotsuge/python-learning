@@ -1,4 +1,3 @@
-from abc import ABCMeta, abstractmethod
 from random import randint, choice
 from window import Window, Encount, Battle, Result
 from subwindow import SimpleLine
@@ -7,7 +6,7 @@ from battlemanager import BattleManager
 
 enemies = CharactorLoader("m_enemy_charactor.tsv")
 enemy = enemies.get_charactor_by_id(
-    id=choice(enemies.get_charactor_ids()), lv=randint(0, 10), charactor_type=Enemy()
+    id=choice(enemies.get_charactor_ids()), lv=randint(1, 10), charactor_type=Enemy()
 )
 
 players = CharactorLoader("m_player_charactor.tsv")

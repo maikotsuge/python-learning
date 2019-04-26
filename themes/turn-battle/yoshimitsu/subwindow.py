@@ -1,5 +1,4 @@
 from abc import ABCMeta, abstractmethod
-from charactor import Charactor
 from battlemanager import BattleManager
 
 window_style_simple_line = "----------------------------------------------"

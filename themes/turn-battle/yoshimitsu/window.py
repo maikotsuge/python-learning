@@ -1,17 +1,14 @@
 from abc import ABCMeta, abstractmethod
-from charactor import Charactor
 from subwindow import (
     SubWindow,
     WindowStyle,
     EncountMessage,
     EnemyStatus,
     PlayerStatus,
-    SubWindowPos,
     Top,
     NoTop,
     Turn,
     DamageMessage,
-    ResultMessage,
     Win,
     Lose,
     Draw,
