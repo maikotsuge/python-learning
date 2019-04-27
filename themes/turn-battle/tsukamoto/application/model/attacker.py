@@ -1,5 +1,5 @@
 from model.ability import Ability
-from util.random_util import hit_percentage
+from util.random_util import is_hit_percentage
 
 
 class Attacker:
@@ -27,7 +27,7 @@ class Attacker:
 
     def __is_critical_hit(self) -> bool:
         # N%の確率でクリティカルになる
-        return hit_percentage(self.CRITICAL_RATE)
+        return is_hit_percentage(self.CRITICAL_RATE)
 
     def get_critical_effect(self) -> str:
         return self.CRITICAL_EFFECT if self._is_critical else ""
